@@ -9,9 +9,10 @@ import (
 func main() {
     domain, ok := os.LookupEnv("DOMAIN")
     if ok {
-      fmt.Printf("Listening on http://%s:80.\n", domain)
+      fmt.Println("Listening on http://0.0.0.0:80")
+      fmt.Printf("Redirecting all requests to https://%s:443.\n", domain)
     } else {
-      fmt.Print("USAGE: Set $DOMAIN environment variable, then run http2https.\n")
+      fmt.Println("USAGE: Set $DOMAIN environment variable, then run http2https.")
       os.Exit(1)
     }
 
