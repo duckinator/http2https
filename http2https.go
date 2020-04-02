@@ -18,7 +18,7 @@ func main() {
 
     http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
         url := "https://" + domain + r.URL.Path
-        http.Redirect(w, r, url, 307)
+        http.Redirect(w, r, url, 308)
     })
 
     err := http.ListenAndServe(":80", nil)
